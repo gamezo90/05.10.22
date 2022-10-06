@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface RolesSpringDataRepository extends JpaRepository<HibernateRole, Long> {
@@ -22,4 +23,7 @@ public interface RolesSpringDataRepository extends JpaRepository<HibernateRole, 
     @Query(value = "select r from HibernateRole r" +
             " inner join HibernateUser u on r.id = u.id ")
     List<Role> findRolesByUserId(Long userId);
+
+     @Query(value = "select r from HibernateRole r")
+     Optional<HibernateRole> findById(Long userId);
 }

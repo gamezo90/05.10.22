@@ -2,7 +2,6 @@ package com.noirix.repository.springdata;
 
 import com.noirix.domain.Gender;
 import com.noirix.domain.User;
-import com.noirix.domain.hibernate.HibernateRole;
 import com.noirix.domain.hibernate.HibernateUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -46,4 +45,5 @@ public interface UserSpringDataRepository extends JpaRepository<HibernateUser, L
 
     @Query(value = "select u from HibernateUser u")
     Optional<User> findByLogin(String login);
+
 }
