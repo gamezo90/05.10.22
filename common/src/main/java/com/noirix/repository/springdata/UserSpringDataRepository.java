@@ -1,7 +1,7 @@
 package com.noirix.repository.springdata;
 
 import com.noirix.domain.Gender;
-import com.noirix.domain.User;
+//import com.noirix.domain.User;
 import com.noirix.domain.hibernate.HibernateUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -29,7 +29,7 @@ public interface UserSpringDataRepository extends JpaRepository<HibernateUser, L
     @Query(value = "select u from HibernateUser u")
     List<HibernateUser> findByHQLQuery();
 
-    @Query(value = "select * from carshop.users", nativeQuery = true)
+    @Query(value = "select u from HibernateUser u", nativeQuery = true)
     List<HibernateUser> findByHQLQueryNative();
 
     @Query(value = "select u from HibernateUser u where u.credentials.login = :login and u.userName = :userName")
@@ -44,6 +44,6 @@ public interface UserSpringDataRepository extends JpaRepository<HibernateUser, L
     int createRoleRow(@Param("user_id") Long userId, @Param("role_id") Long roleId);
 
     @Query(value = "select u from HibernateUser u")
-    Optional<User> findByLogin(String login);
+    Optional<HibernateUser> findByLogin(String login);
 
 }
