@@ -4,8 +4,9 @@ import com.noirix.domain.Role;
 import com.noirix.domain.SystemRoles;
 import com.noirix.domain.User;
 //import com.noirix.repository.hibernate.HibernateUserInterface;
-import com.noirix.repository.jdbctemplate.RoleRepositoryInterface;
+//import com.noirix.repository.jdbctemplate.RoleRepositoryInterface;
 //import com.noirix.repository.user.UserRepositoryInterface;
+import com.noirix.repository.springdata.RolesSpringDataRepository;
 import com.noirix.repository.springdata.UserSpringDataRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +24,7 @@ public class UserSecurityService implements UserDetailsService {
 
     private final UserSpringDataRepository userRepository;
 
-    private final RoleRepositoryInterface roleRepository;
+    private final RolesSpringDataRepository roleRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
