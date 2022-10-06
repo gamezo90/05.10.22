@@ -3,7 +3,7 @@ package com.noirix.security;
 import com.noirix.domain.Role;
 import com.noirix.domain.SystemRoles;
 import com.noirix.domain.User;
-import com.noirix.repository.hibernate.HibernateUserInterface;
+//import com.noirix.repository.hibernate.HibernateUserInterface;
 import com.noirix.repository.jdbctemplate.RoleRepositoryInterface;
 //import com.noirix.repository.user.UserRepositoryInterface;
 import com.noirix.repository.springdata.UserSpringDataRepository;
