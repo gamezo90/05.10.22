@@ -6,6 +6,7 @@ import com.noirix.domain.User;
 import com.noirix.repository.hibernate.HibernateUserInterface;
 import com.noirix.repository.jdbctemplate.RoleRepositoryInterface;
 //import com.noirix.repository.user.UserRepositoryInterface;
+import com.noirix.repository.springdata.UserSpringDataRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -20,7 +21,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class UserSecurityService implements UserDetailsService {
 
-    private final HibernateUserInterface userRepository;
+    private final UserSpringDataRepository userRepository;
 
     private final RoleRepositoryInterface roleRepository;
 

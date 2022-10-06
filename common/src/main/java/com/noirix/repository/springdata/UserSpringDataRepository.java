@@ -1,6 +1,7 @@
 package com.noirix.repository.springdata;
 
 import com.noirix.domain.Gender;
+import com.noirix.domain.User;
 import com.noirix.domain.hibernate.HibernateUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -11,6 +12,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Optional;
 
 public interface UserSpringDataRepository extends CrudRepository<HibernateUser, Long>, JpaRepository<HibernateUser, Long>, PagingAndSortingRepository<HibernateUser, Long> {
 
@@ -40,4 +42,7 @@ public interface UserSpringDataRepository extends CrudRepository<HibernateUser, 
     @Modifying
     @Query(value = "insert into carshop.l_role_user(user_id, role_id) values (:user_id, :role_id)", nativeQuery = true)
     int createRoleRow(@Param("user_id") Long userId, @Param("role_id") Long roleId);
+
+    @Query(value = "select u from HibernateUser u")
+    Optional<User> findByLogin(String login);
 }
