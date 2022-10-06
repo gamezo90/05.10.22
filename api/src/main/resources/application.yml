@@ -16,7 +16,7 @@ spring:
       maximum-pool-size: 10
       driver-class-name: org.postgresql.Driver
     username: postgres
-    password: root
+    password: postgres
     url: "jdbc:postgresql://localhost:5432/jd2"
 #
 #  cache:
@@ -26,7 +26,7 @@ spring:
 #      spec: initialCapacity=10,maximumSize=20, expireAfterAccess=10s
 
 server:
-  port: 8080
+  port: 8081
 
 ---
 
