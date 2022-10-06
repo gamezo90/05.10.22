@@ -2,6 +2,7 @@ package com.noirix.repository.springdata;
 
 import com.noirix.domain.Gender;
 import com.noirix.domain.User;
+import com.noirix.domain.hibernate.HibernateRole;
 import com.noirix.domain.hibernate.HibernateUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -14,7 +15,7 @@ import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 
-public interface UserSpringDataRepository extends CrudRepository<HibernateUser, Long>, JpaRepository<HibernateUser, Long>, PagingAndSortingRepository<HibernateUser, Long> {
+public interface UserSpringDataRepository extends JpaRepository<HibernateUser, Long> {
 
     HibernateUser findByIdAndGender(Long id, Gender gender);
 
